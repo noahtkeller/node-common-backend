@@ -1,0 +1,9 @@
+.idea
+**/.DS_Store
+
+**/node_modules
+**/*tgz
+
+coverage
+.nyc_output
+package-lock.json
