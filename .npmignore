@@ -1,0 +1,8 @@
+.circleci
+test
+.codacy.yml
+.dockerignore
+.gitignore
+.mocharc.yml
+.npmignore
+**/*tgz

@@ -1,0 +1,66 @@
+{
+  "name": "@noahtkeller/common-backend",
+  "version": "0.1.0",
+  "description": "The NodeJS back-end common components",
+  "scripts": {
+    "test:unit": "mocha 'test/unit/**/*.js'",
+    "test:unit:coverage": "c8 npm --reporter=lcov run test:unit",
+    "test:unit:coverage:html": "c8 --reporter=lcov --reporter=html npm run test:unit",
+    "test:integration": "mocha 'test/integration/**/*.js'",
+    "test:integration:coverage": "c8 --reporter=lcov npm run test:integration",
+    "test:integration:coverage:html": "c8 --reporter=lcov --reporter=html npm run test:integration",
+    "test:all": "mocha 'test/unit/**/*.js' 'test/integration/**/*.js'",
+    "test:all:coverage": "c8 --reporter=lcov --all npm run test:all",
+    "test:all:coverage:html": "c8 --reporter=lcov --all --reporter=html npm run test:all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noahtkeller/node-common-backend.git"
+  },
+  "homepage": "https://github.com/noahtkeller/node-common-backend",
+  "bugs": "https://github.com/noahtkeller/node-common-backend/issues",
+  "author": {
+    "name": "Noah Keller",
+    "email": "noahtkeller@gmail.com",
+    "url": "https://noahtkeller.github.io/"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js",
+    "./mongoose": "./lib/models/mongoose/index.js",
+    "./mongoose/user": "./lib/models/mongoose/user/index.js",
+    "./mongoose/user/schema": "./lib/models/mongoose/user/schema.js",
+    "./mongoose/user/helpers": "./lib/models/mongoose/user/helpers/index.js",
+    "./mongoose/user/methods": "./lib/models/mongoose/user/methods/index.js",
+    "./mongoose/user/statics": "./lib/models/mongoose/user/statics/index.js",
+    "./services": "./lib/services/index.js",
+    "./services/user": "./lib/services/user/index.js",
+    "./services/user/register": "./lib/services/user/register.js",
+    "./utils": "./lib/utils/index.js",
+    "./utils/coded-error": "./lib/utils/coded-error.js",
+    "./utils/get-salt": "./lib/utils/get-salt.js",
+    "./utils/hash-password": "./lib/utils/hash-password.js",
+    "./utils/i18next": "./lib/utils/i18next.js"
+  },
+  "dependencies": {
+    "@noahtkeller/common-strings": "^0.1.1",
+    "error-factory": "^0.1.6",
+    "i18next": "^21.6.11",
+    "mongoose": "^6.2.0"
+  },
+  "devDependencies": {
+    "c8": "^7.11.0",
+    "mocha": "^9.2.0",
+    "sinon": "^13.0.1"
+  },
+  "c8": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "cache": true
+  }
+}
